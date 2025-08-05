@@ -15,6 +15,13 @@ impl PartialEq for Ticket
         &self.title == &rhs.title &&
         &self.status == &rhs.status
     }
+    // This also works as Rust will insert borrow when needed
+    // method call invocation (implicit borrowing/deref coercion) 
+    // fn eq(&self, rhs: &Self) -> bool {
+    //     self.description == rhs.description &&
+    //     self.title == rhs.title &&
+    //     self.status == rhs.status
+    // }
 }
 
 #[cfg(test)]
