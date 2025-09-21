@@ -30,6 +30,46 @@ pub enum TicketNewError {
     },
 }
 
+// #[derive(Debug)]
+// pub enum TicketNewError {
+//     TitleCannotBeEmpty,
+//     TitleTooLong,
+//     DescriptionCannotBeEmpty,
+//     DescriptionTooLong,
+//     StatusStrInvalid {
+//         source: status::ParseStatusError,
+//     },
+// }
+
+// impl std::fmt::Display for TicketNewError {
+//     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+//         match self {
+//             TicketNewError::TitleCannotBeEmpty => write!(f, "Title cannot be empty"),
+//             TicketNewError::TitleTooLong => write!(f, "Title cannot be longer than 50 bytes"),
+//             TicketNewError::DescriptionCannotBeEmpty => write!(f, "Description cannot be empty"),
+//             TicketNewError::DescriptionTooLong => {
+//                 write!(f, "Description cannot be longer than 500 bytes")
+//             }
+//             TicketNewError::StatusStrInvalid { source } => write!(f, "{}", source),
+//         }
+//     }
+// }
+
+// impl std::error::Error for TicketNewError {
+//     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+//         match self {
+//             TicketNewError::StatusStrInvalid { source } => Some(source),
+//             _ => None,
+//         }
+//     }
+// }
+
+// impl From<status::ParseStatusError> for TicketNewError {
+//     fn from(source: status::ParseStatusError) -> Self {
+//         TicketNewError::StatusStrInvalid { source }
+//     }
+// }
+
 #[derive(Debug, PartialEq, Clone)]
 pub struct Ticket {
     title: String,
