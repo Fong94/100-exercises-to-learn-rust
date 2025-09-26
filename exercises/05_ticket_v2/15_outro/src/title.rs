@@ -2,11 +2,11 @@
 //   enforcing that the title is not empty and is not longer than 50 bytes.
 //   Implement the traits required to make the tests pass too.
 
-#[derive(Debug)]
+#[derive(Debug, PartialEq, Clone)]
 pub struct TicketTitle(String);
 
 #[derive(Debug, thiserror::Error)]
-enum TitleError {
+pub enum TitleError {
     #[error("The title cannot be empty")]
     TitleCannotBeEmpty,
     #[error("The title cannot be longer than 50 bytes")]
